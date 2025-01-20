@@ -1,0 +1,23 @@
+.questionCard {
+    height: auto;
+    overflow: hidden;
+    padding: 0 15px;
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        .title {
+            font-size: 16px;
+        }
+    }
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+    }
+}

@@ -1,0 +1,25 @@
+// MainLayout.tsx
+.main_layout {
+    height: calc(100vh - 129px);
+}
+.main_footer {
+    text-align: center;
+    background-color: #f7f7f7;
+    border-top: 1px solid #e8e8e8;
+}
+
+// ManageLayout.tsx
+.manage_layout {
+    padding: 24px 0;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    .manage_left {
+        width: 120px;
+    }
+    
+    .manage_right {
+        flex: 1;
+        margin-left: 60px;
+    }
+}
