@@ -1,6 +1,7 @@
 // MainLayout.tsx
 .main_layout {
     height: calc(100vh - 129px);
+    overflow: auto;
 }
 .main_footer {
     text-align: center;

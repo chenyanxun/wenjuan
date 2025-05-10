@@ -1,9 +1,39 @@
-import { Form, Typography, Button, Space, Input } from 'antd'
+import { Form, Typography, Button, Space, Input, message } from 'antd'
 import { UserAddOutlined } from '@ant-design/icons'
 import styles from './index.module.scss'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useRequest } from 'ahooks'
+import { register } from '../../services/user'
 const { Title } = Typography
+interface IFormValue {
+  username: string
+  password: string
+  againPwd: string
+  nickname: string
+}
 function Index() {
+  const [form] = Form.useForm()
+  const nav = useNavigate()
+  const { run } = useRequest(
+    async values => {
+      const { username, password, nickname } = values
+      const data = await register(username, password, nickname)
+      return data
+    },
+    {
+      manual: true,
+      onSuccess(data) {
+        if (data.errno === 0) {
+          message.success('注册成功')
+          nav('/login')
+        }
+      },
+    }
+  )
+
+  const onFinish = (values: IFormValue) => {
+    run(values)
+  }
   return (
     <div className={styles.index}>
       <Title level={2}>
@@ -14,9 +44,11 @@ function Index() {
       </Title>
       <Form
         name="basic"
+        form={form}
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}
+        onFinish={onFinish}
         autoComplete="off"
       >
         <Form.Item

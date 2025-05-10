@@ -1,0 +1,14 @@
+.noLogin {
+  color: #fff;
+  cursor: pointer;
+}
+.haslogin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  column-gap: 1em;
+}
+.logout {
+  cursor: pointer;
+}

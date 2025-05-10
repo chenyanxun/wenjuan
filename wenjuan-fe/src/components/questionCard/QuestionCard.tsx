@@ -9,16 +9,10 @@ import {
   StockOutlined,
 } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
+import { IAnyJson } from '../../type'
 const { confirm } = Modal
-interface Iquestion {
-  _id: number
-  title: string
-  isStar: boolean
-  isPublished: boolean
-  answerCount: number
-  createdAt: string
-}
-function QuestionCard(props: Iquestion) {
+
+function QuestionCard(props: IAnyJson) {
   const { _id, title, isStar, isPublished, answerCount, createdAt } = props
   const confirmCopy = (id: number) => {
     console.log('复制', id)

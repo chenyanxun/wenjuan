@@ -7,14 +7,21 @@ import {
   StarOutlined,
   UnorderedListOutlined,
 } from '@ant-design/icons'
+import { createQuestionService } from '../../services/question'
 
 function ManageLayout() {
   const nav = useNavigate()
   const { pathname } = useLocation()
+  const handleCreateClick = async () => {
+    const result = await createQuestionService()
+    if (result.errno === 0) {
+      nav(`/question/edit/${result.data.id}`)
+    }
+  }
   return (
     <div className={styles.manage_layout}>
       <div className={styles.manage_left}>
-        <Button type="primary" icon={<PlusOutlined />}>
+        <Button type="primary" icon={<PlusOutlined />} onClick={handleCreateClick}>
           新建问卷
         </Button>
         <Divider></Divider>

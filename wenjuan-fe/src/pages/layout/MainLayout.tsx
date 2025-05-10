@@ -1,16 +1,28 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { Flex, Layout } from 'antd'
 import styles from './layout.module.scss'
 import Logo from '../../components/logo/Logo'
-import UserInfo from '../../components/userinfo/UserInfo'
+import UserInfo from '../../components/userInfo/UserInfo'
+import { useEffect, useState } from 'react'
 const { Header, Content, Footer } = Layout
 function MainLayout() {
+  const [show, setShow] = useState(true)
+  const location = useLocation()
+  useEffect(() => {
+    const currentPath = location.pathname
+    if (currentPath === '/login' || currentPath === '/register') {
+      setShow(false)
+    } else {
+      setShow(true)
+    }
+  }, [location.pathname])
+
   return (
     <Layout>
       <Header>
         <Flex justify="space-between" align="center">
           <Logo></Logo>
-          <UserInfo></UserInfo>
+          {show && <UserInfo></UserInfo>}
         </Flex>
       </Header>
       <Layout className={styles.main_layout}>
