@@ -26,3 +26,20 @@ export async function createQuestionService(): Promise<IRes> {
   const data = (await http.post(url)) as IRes
   return data
 }
+
+// 获取单个问卷信息
+export const getQuesiontService = async (id: string): Promise<IRes> => {
+  const url = `/api/question/${id}`
+  const data = (await http.get(url)) as IRes
+  return data
+}
+
+// 更新单个问卷
+export async function updateQuestionService(
+  id: string,
+  opt: { [key: string]: any }
+): Promise<IRes> {
+  const url = `/api/question/${id}`
+  const data = (await http.patch(url, opt)) as IRes
+  return data
+}

@@ -8,11 +8,12 @@ import {
   StarOutlined,
   StockOutlined,
 } from '@ant-design/icons'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { IAnyJson } from '../../type'
 const { confirm } = Modal
 
 function QuestionCard(props: IAnyJson) {
+  const nav = useNavigate()
   const { _id, title, isStar, isPublished, answerCount, createdAt } = props
   const confirmCopy = (id: number) => {
     console.log('复制', id)
@@ -32,14 +33,21 @@ function QuestionCard(props: IAnyJson) {
       },
     })
   }
+  const goTo = (isPublished: boolean, id: number) => {
+    if (isPublished) {
+      nav('/question/stat/' + id)
+    } else {
+      nav('/question/edit/' + id)
+    }
+  }
   return (
     <div className={styles.questionCard}>
       <div className={styles.top}>
         <div>
           <Space>
             {isStar && <StarOutlined style={{ color: 'red' }} />}
-            <div className={styles.title}>
-              <Link to={'/question/edit/' + _id}>{title}</Link>
+            <div className={styles.title} onClick={() => goTo(isPublished, _id)}>
+              {title}
             </div>
           </Space>
         </div>
