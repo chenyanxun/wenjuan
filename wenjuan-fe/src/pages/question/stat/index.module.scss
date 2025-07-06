@@ -1,0 +1,39 @@
+.stat {
+  height: 100vh;
+  background: #EEF0F4;
+  display: flex;
+  flex-direction: column;
+  .top {
+    height: 50px;
+    background: #fff;
+  }
+  .bottom {
+    height: calc(100vh - 50px);
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      width: 360px;
+      height: 100%;
+      overflow-y: auto;
+      padding: 0 10px;
+      background: #fff;
+    }
+    .center {
+      flex: 1;
+      margin: 0 10px;
+      height: 100%;
+      background: #fff;
+      overflow-y: auto;
+    }
+    .right {
+      width: 360px;
+      height: 100%;
+      overflow-y: auto;
+      padding: 0 10px;
+      background: #fff;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.canvas {
+  height: 100%;
+  padding: 0 6px;
+  .canvas_content {
+    padding:6px;
+    margin-bottom: 6px;
+    border: 1px solid #fff;
+    &:hover {
+      border-color: pink;
+    }
+
+  }
+}
+.selected {
+  border-color: red !important;
+}
+.locked {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.component {
+  pointer-events: none;
+}

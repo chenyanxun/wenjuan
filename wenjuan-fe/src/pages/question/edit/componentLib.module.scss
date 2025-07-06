@@ -1,0 +1,13 @@
+.wrap {
+  background: #e1e1e1;
+  border: 1px solid #fff;
+  margin-bottom: 18px;
+  padding: 12px;
+  &:hover {
+    border-color: pink;
+  }
+}
+
+.component {
+  pointer-events: none;
+}

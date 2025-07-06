@@ -1,0 +1,38 @@
+.edit {
+  height: 100vh;
+  background: #EEF0F4;
+  display: flex;
+  flex-direction: column;
+  .top {
+    height: 50px;
+    background: #fff;
+  }
+  .bottom {
+    height: calc(100vh - 50px);
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      width: 360px;
+      height: 100%;
+      overflow-y: auto;
+      padding: 0 10px;
+      background: #fff;
+    }
+    .center {
+      width: 400px;
+      height: 90%;
+      background: #fff;
+      overflow-y: auto;
+    }
+    .right {
+      width: 360px;
+      height: 100%;
+      overflow-y: auto;
+      padding: 0 10px;
+      background: #fff;
+    }
+  }
+}
