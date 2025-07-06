@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { IUserState, logoutReducer } from '../../store/userReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { IState, persistor } from '../../store'
+// 添加一行注释
 function UserInfo() {
   const isLogin = sessionStorage.getItem(USERTOKEN)
   const dispatch = useDispatch()
