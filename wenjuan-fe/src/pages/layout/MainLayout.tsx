@@ -2,7 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { Flex, Layout } from 'antd'
 import styles from './layout.module.scss'
 import Logo from '../../components/logo/Logo'
-import UserInfo from '../../components/userInfo/UserInfo'
+import UserInfo from '../../components/userinfo/UserInfo'
 import { useEffect, useState } from 'react'
 const { Header, Content, Footer } = Layout
 function MainLayout() {
